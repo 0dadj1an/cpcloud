@@ -29,6 +29,45 @@ cpcloud is a convenience library, written in Python, that is useful for
 querying instance information from popular cloud providers and using it
 in API requests sent to Check Point security gateways.
 
+usage:
+
+AmazonClient:
+
+    >>> from cpcloud.amazon import AmazonClient
+    >>> client = AmazonClient(AWS_ACCESS_KEY, AWS_SECRET_KEY, AWS_REGION)
+    >>> data = client.get_instance_data()
+    >>> print(data)
+
+AzureClient:
+
+    >>> from cpcloud.azure import AzureClient
+    >>> client = AzureClient(AZURE_SUB_ID,
+                             AZURE_TOKEN_ENDPOINT,
+                             AZURE_APP_ID,
+                             AZURE_APP_PW,
+                             AZURE_RESOURCE_GROUP)
+    >>> data = client.get_instance_data()
+    >>> print(data)
+
+GoogleClient:
+
+    >>> from cpcloud.google import GoogleClient
+    >>> client = GoogleClient(GOOGLE_SERVICE_ACCOUNT_CERT_FILE,
+                              GOOGLE_SERVICE_ACCOUNT_EMAIL,
+                              GOOGLE_PROJECT,
+                              GOOGLE_ZONE)
+    >>> data = client.get_instance_data()
+    >>> print(data)
+
+IdentityAwarenessClient:
+
+    >>> from cpcloud.checkpoint import IdentityAwarenessClient
+    >>> client = IdentityAwarenessClient(CPIDA_GATEWAY_IP, CPIDA_SHARED_SECRET)
+    >>> resp_json = client.add_identity('10.1.1.32', 'testmachine', 'testdomain')
+    >>> print(resp_json)
+    >>> resp_json = client.show_identity('10.1.1.32')
+    >>> print(resp_json)
+
 :copyright: (c) 2016 by Dana James Traversie and Check Point Software Technologies, Ltd.
 :license: Apache 2.0, see LICENSE for more details.
 
