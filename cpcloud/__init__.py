@@ -59,6 +59,17 @@ GoogleClient:
     >>> data = client.get_instance_data()
     >>> print(data)
 
+NuageClient:
+
+    >>> from cpcloud.nuage import NuageClient
+    >>> client = NuageClient(NUAGE_HOST,
+                             NUAGE_PORT,
+                             NUAGE_USERNAME,
+                             NUAGE_PASSWORD,
+                             NUAGE_ORG)
+    >>> data = client.get_instance_data()
+    >>> print(data)
+
 IdentityAwarenessClient:
 
     >>> from cpcloud.checkpoint import IdentityAwarenessClient
