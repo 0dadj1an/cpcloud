@@ -56,6 +56,10 @@ class GoogleClientError(WebClientError):
     """Exception raised when a Google web client runs into trouble."""
     pass
 
+class NuageClientError(WebClientError):
+    """Exception raised when a Nuage Networks web client runs into trouble."""
+    pass
+
 class CheckPointClientError(WebClientError):
     """Exception raised when a Check Point web client runs into trouble."""
     pass
